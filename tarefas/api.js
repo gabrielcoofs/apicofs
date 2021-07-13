@@ -716,7 +716,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                 }
         } else if (theme == 'naruto') {
         	if (!text2) return res.json(loghandler.nottext2)
-            try{
+            try {
             request.post({
                 url: "https://photooxy.com/tags/naruto-cover",
                 headers: {
