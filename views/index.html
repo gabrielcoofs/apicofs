@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="img/logo/cofs2.jpg" rel= "icon">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Rest API - GabrielCofs</title>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <script>
+</script>
+</head>
+
+<body id="page-top" onload="getvisitor();">
+  <audio src="/database/staywithme.webm"></audio>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+        	<img src="img/logo/cofs2.jpg">
+        </div>
+        <div class="sidebar-brand-text mx-3">GabrielCofs API</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-code"></i>
+          <span>Início</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Recursos da API
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fas fa-fw fa-arrow-down"></i>
+          <span>API de mídia social</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Media Features</h6>
+            <a class="collapse-item" href="api/yutub/video?url=MASUKIN_URL&apikey=Cofs">YouTube Video Downloader</a>
+            <a class="collapse-item" href="api/yutub/audio?url=MASUKIN_URL&apikey=Cofs">YouTube Audio Downloader</a>
+            <a class="collapse-item" href="api/fbdown/?url=MASUKIN_URL&apikey=Cofs">Facebook Downloader</a>
+            <a class="collapse-item" href="api/tiktod/?url=MASUKIN_URL&apikey=Cofs">Tiktok Downloader</a>
+            <a class="collapse-item" href="api/tiktod/stalk/?username=MASUKIN_USERNAME&apikey=Cofs">Tiktok Stalk</a>
+            <a class="collapse-item" href="api/ig/stalk?username=MASUKIN_USERNAME&apikey=Cofs">Instagram Stalk</a>
+            <a class="collapse-item" href="api/yutub/search?video=Ustadz Abdul Somad&apikey=Cofs">YouTube Search</a>
+            </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseIslamic" aria-expanded="true"
+          aria-controls="collapseIslamic">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Características Islâmicas</span>
+        </a>
+        <div id="collapseIslamic" class="collapse" aria-labelledby="headingIslamic" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Islamico  API</h6>
+            <a class="collapse-item" href="api/hadits?kitab=bukhari&nomor=52&apikey=Cofs">Hadits Shahih</a>
+            <a class="collapse-item" href="api/quran?surah=1&ayat=2&apikey=Cofs">Al Qur'an</a>
+            <a class="collapse-item" href="api/muslim/tahlil?apikey=Cofs">Doa Tahlil</a>
+            <a class="collapse-item" href="api/muslim/wirid?apikey=Cofs">Doa Wirid</a>
+            <a class="collapse-item" href="api/muslim/asmaulhusna?apikey=Cofs">Asmaul Husna</a>
+            <a class="collapse-item" href="api/muslim/doaharian?apikey=Cofs">Doa Harian</a>
+            <a class="collapse-item" href="api/muslim/ayatkursi?apikey=Cofs">Ayat Kursi</a>
+            <a class="collapse-item" href="api/kisahnabi?nabi=muhammad&apikey=Cofs">Kisah Nabi</a>
+            <a class="collapse-item" href="api/muslim/niatshalat?apikey=Cofs">Niat Shalat</a>
+            <a class="collapse-item" href="api/muslim/bacaanshalat?apikey=Cofs">Bacaan Shalat</a>
+            <a class="collapse-item" href="api/jadwalshalat?kota=jakartautara&apikey=Cofs">Jadwal Shalat</a>
+          </div>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKodepos" aria-expanded="true"
+          aria-controls="collapseKodepos">
+          <i class="fas fa-fw fa-search"></i>
+          <span>API de Imagens</span>
+        </a>
+        <div id="collapseKodepos" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Imagens API</h6>
+            <a class="collapse-item" href="api/wallpaper/teknologi?apikey=Cofs">Wallpaper Teknologi</a>
+            <a class="collapse-item" href="api/wallpaper/programming?apikey=Cofs">Wallpaper Programming</a>
+            <a class="collapse-item" href="api/wallpaper/cyberspace?apikey=Cofs">Wallpaper CyberSpace</a>
+            <a class="collapse-item" href="api/wallpaper/muslim?apikey=Cofs">Wallpaper Muslim</a>
+            <a class="collapse-item" href="api/wallpaper/pegunungan?apikey=Cofs">Wallpaper Mountain View</a>
+            </div>
+            </div>
+            </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGithub"
+          aria-expanded="true" aria-controls="collapseGithub">
+          <i class="fas fa-fw fa-book"></i>
+          <span>API Aleatória</span>
+        </a>
+        <div id="collapseGithub" class="collapse" aria-labelledby="headingGithub" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Aleatória API</h6>
+            <a class="collapse-item" href="api/randomquote?apikey=Cofs">Quotes</a>
+            <a class="collapse-item" href="api/randomquote/muslim?apikey=Cofs">Quotes Islami</a>
+            <a class="collapse-item" href="api/quotes/kanye?apikey=Cofs">Quotes Kanye</a>
+            <a class="collapse-item" href="api/random/asmaulhusna?apikey=Cofs">Asmaul Husna</a>
+            <a class="collapse-item" href="api/random/meme?apikey=Cofs">Meme</a>
+            <a class="collapse-item" href="api/random/wallpaper?apikey=Cofs">Wallpaper</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker"
+          aria-expanded="true" aria-controls="collapseMaker">
+          <i class="fa fa-fw fa-images"></i>
+          <span>API de TEXTOMAKER 2D</span>
+        </a>
+        <div id="collapseMaker" class="collapse" aria-labelledby="headingMaker" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">TextoMaker2D API</h6>
+            <a class="collapse-item" href="api/maker?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 1</a>
+            <a class="collapse-item" href="api/maker2?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 2</a>
+            <a class="collapse-item" href="api/maker3?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 3</a>
+            <a class="collapse-item" href="api/maker4?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 4</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker3D"
+          aria-expanded="true" aria-controls="collapseMaker3D">
+          <i class="fa fa-fw fa-images"></i>
+          <span>API de TEXTOMAKER 3D</span>
+        </a>
+        <div id="collapseMaker3D" class="collapse" aria-labelledby="headingMaker3D" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">TextoMaker3D API</h6>
+            <a class="collapse-item" href="api/maker3d?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 1</a>
+            <a class="collapse-item" href="api/maker3d/no2?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 2</a>
+            <a class="collapse-item" href="api/maker3d/no3?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 3</a>
+            <a class="collapse-item" href="api/maker3d/no4?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 4</a>
+            <a class="collapse-item" href="api/maker3d/no5?text=Ya Allah Kabulkan DoaKu&apikey=Cofs">Maker 5</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMakerOther"
+          aria-expanded="true" aria-controls="collapseMakerOther">
+          <i class="fa fa-fw fa-images"></i>
+          <span>TextoMaker Other API</span>
+        </a>
+        <div id="collapseMakerOther" class="collapse" aria-labelledby="headingMakerOther" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">TextoMaker Other API</h6>
+            <a class="collapse-item" href="api/maker/special/transformer?text=Transformer&apikey=Cofs">Transformer</a>
+            <a class="collapse-item" href="api/maker/special/epep?text=Cofs&apikey=Cofs">Sertifikat Epep</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseText" aria-expanded="true"
+          aria-controls="collapseText">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Photooxy API</span>
+        </a>
+        <div id="collapseText" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Photooxy API</h6>
+            <a class="collapse-item" href="api/textmaker?text=halo&text2=hai&theme=glitch&apikey=Cofs">Glitch</a>
+            <a class="collapse-item" href="api/textmaker?text=halo&text2=hai&text3=gwganteng&theme=google-suggestion&apikey=Cofs">Google Suggestion</a>
+            <a class="collapse-item" href="api/textmaker/maker5d?text=halo&text2=hai&theme=pornhub&apikey=Cofs">Pornhub</a>
+            <a class="collapse-item" href="api/textmaker/maker5d?text=halo&text2=hai&theme=harrypotter&apikey=Cofs">HarryPotter</a>
+            <a class="collapse-item" href="api/textmaker/game?text=halo&text2=hai&theme=pubg&apikey=Cofs">PUBG</a>
+            <a class="collapse-item" href="api/textmaker/game?text=halo&text2=hai&theme=naruto&apikey=Cofs">Naruto</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Cofs&theme=coffee-cup&apikey=Cofs">Coffee Cup</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Cofs&theme=coffee-cup2&apikey=Cofs">Coffee Cup 2</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Cofs&theme=neon&apikey=Cofs">Neon</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Cofs&theme=glow&apikey=Cofs">Glow</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Cofs&theme=summer&apikey=Cofs">Summer</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Cofs&theme=flower&apikey=Cofs">Flower</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Cofs&theme=text-burn&apikey=Cofs">Text Burn</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Cofs&theme=art-quote&apikey=Cofs">Art Quote</a>
+            <a class="collapse-item" href="api/textmaker/roses?text=Cofs&theme=wooden-boarch&apikey=Cofs">Wooden Boarch</a>
+            <a class="collapse-item" href="api/textmaker/roses?text=Cofs&theme=golden&apikey=Cofs">Golden Roses</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime" aria-expanded="true"
+          aria-controls="collapseAnime">
+          <i class="fas fa-fw fa-bullseye"></i>
+          <span>API de ANIME/MANGÁ</span>
+        </a>
+        <div id="collapseAnime" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Anime/Manga Features</h6>
+            <a class="collapse-item" href="api/anime/kusonime?search=planetarian&apikey=Cofs">Kusonime</a>
+            <a class="collapse-item" href="api/manga?search=kimetsu no yaiba&apikey=Cofs">Manga</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGames" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="app-menu__icon fa fa-laptop"></i>
+                    <span>API de JOGOS</span>
+                </a>
+                <div id="collapseGames" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Games Features</h6>
+            <a class="collapse-item" href="/api/kuis/caklontong?apikey=Cofs">Cak Lontong</a>
+            <a class="collapse-item" href="/api/kuis/tebakgambar?apikey=Cofs">Tebak Gambar</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFilmApik" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fab fa-fw fa-gratipay"></i>
+                    <span>API de FilmApik</span>
+                </a>
+                <div id="collapseFilmApik" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">FilmApik Features</h6>
+            <a class="collapse-item" href="/api/filmapik/search?film=avenger&apikey=Cofs">Cari Film</a>
+            <a class="collapse-item" href="/api/filmapik/kategori?film=action&apikey=Cofs">Cari Kategori Film</a>
+            <a class="collapse-item" href="/api/filmapik/terbaru?apikey=Cofs">Film Terbaru</a>
+            <a class="collapse-item" href="/api/filmapik/play?id=142455&apikey=Cofs">Play Film</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLk21" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-fw fa-leaf"></i>
+                    <span>Lk21 API</span>
+                </a>
+                <div id="collapseLk21" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Lk21 Features</h6>
+            <a class="collapse-item" href="/api/lk21/search?film=avenger&apikey=Cofs">Cari Film</a>
+            <a class="collapse-item" href="/api/lk21/terbaru?apikey=Cofs">Film Terbaru</a>
+            <a class="collapse-item" href="/api/lk21/comingsoon?apikey=Cofs">Film Yg Akan Datang</a>
+            <a class="collapse-item" href="/api/lk21/tvseries?apikey=Cofs">Series TV</a>
+            <a class="collapse-item" href="/api/lk21/year?tahun=2021&apikey=Cofs">Berdasarkan Tahun</a>
+            <a class="collapse-item" href="/api/lk21/country?negara=indonesia&apikey=Cofs">Berdasarkan Negara</a>
+            <a class="collapse-item" href="/api/lk21/genre?tipe=action&apikey=Cofs">Berdasarkan Genre</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-fw fa-exclamation"></i>
+                    <span>API de NOTÍCIAS</span>
+                </a>
+                <div id="collapseNews" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">News Features</h6>
+            <a class="collapse-item" href="api/news">Jenis Berita</a>
+            <a class="collapse-item" href="api/news/cnn?type=JENIS_BERITA&apikey=Cofs">Cnn News</a>
+            <a class="collapse-item" href="api/news/cnbc?type=JENIS_BERITA&apikey=Cofs">CnBc News</a>
+            <a class="collapse-item" href="api/news/republika?type=JENIS_BERITA&apikey=Cofs">Republika News</a>
+            <a class="collapse-item" href="api/news/tempo?type=JENIS_BERITA&apikey=Cofs">Tempo News</a>
+            <a class="collapse-item" href="api/news/antara?type=JENIS_BERITA&apikey=Cofs">Antara News</a>
+            <a class="collapse-item" href="api/news/kumparan?type=JENIS_BERITA&apikey=Cofs">Kumparan News</a>
+            </div>
+            </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseother" aria-expanded="true"
+          aria-controls="collapseother">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Outras Apis</span>
+        </a>
+        <div id="collapseother" class="collapse" aria-labelledby="headingother" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Other Menu</h6>
+            <a class="collapse-item" href="api/nulis?text=Cofs&apikey=Cofs">Nulis Buku</a>
+            <a class="collapse-item" href="api/infonpm?query=zhirrr-api&hostname=zhirrr&apikey=Cofs">Info NPM</a>
+            <a class="collapse-item" href="api/infogempa?apikey=Cofs">Info Gempa Terkini</a>
+            <a class="collapse-item" href="api/infocuaca?provinsi=jakarta&apikey=Cofs">Info Cuaca Indonesia</a>
+            <a class="collapse-item" href="api/infocuaca/dunia?apikey=Cofs">Info Cuaca Dunia</a>
+            <a class="collapse-item" href="api/infocuaca/bandara?apikey=Cofs">Info Cuaca Bandara</a>
+            <a class="collapse-item" href="api/infotsunami?apikey=Cofs">Info Tsunami</a>
+            <a class="collapse-item" href="api/covidindo?apikey=Cofs">Covid Indo</a>
+            <a class="collapse-item" href="api/covidworld?apikey=Cofs">Covid World</a>
+            <a class="collapse-item" href="api/short/tiny?url=google.com&apikey=Cofs">Short Link</a>
+            <a class="collapse-item" href="api/wikipedia?search=jembatan&apikey=Cofs">Wikipedia</a>
+            <a class="collapse-item" href="api/drakorasia?search=tale&apikey=Cofs">Drakor Asia</a>
+            <a class="collapse-item" href="api/fakedata?country=en&apikey=Cofs">Fake Data</a>
+            <a class="collapse-item" href="api/hilih?kata=aku kan ganteng banget&apikey=Cofs">Kata Hilih</a>
+            <a class="collapse-item" href="api/liriklagu?lagu=sayang&apikey=Cofs">Lirik Lagu</a>
+            <a class="collapse-item" href="api/chordlagu?lagu=sayang&apikey=Cofs">Chord Lagu</a>
+            <a class="collapse-item" href="api/kbbi?kata=pohon&apikey=Cofs">KBBI</a>
+            <a class="collapse-item" href="api/kodepos?kota=jakarta&apikey=Cofs">Kode Pos</a>
+            <a class="collapse-item" href="api/translate?kata=hi&apikey=Cofs">Translate</a>
+            <a class="collapse-item" href="api/gabut?apikey=Cofs">Gabut</a>
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+<div class="version"><b>Tá com dúvida? Fale aí</b></div>
+      </div>
+      <li class="nav-item">
+          
+            <a class="nav-link collapsed" href="./">
+            <i class="fas fa-fw fa-info"></i>
+                    <span>Sobre mim</span>
+            </a>
+      </li>
+      <li class="nav-item">
+          
+            <a class="nav-link collapsed" href="https://wa.me/5511910592328">
+            <i class="fab fa-fw fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+            </a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link collapsed" href="https://github.com/gabrielcoofs">
+            <i class="fab fa-fw fa-github"></i>
+                    <span>Github</span>
+            </a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link collapsed" href="https://instagram.com/gabrielcofs_">
+            <i class="fab fa-fw fa-instagram"></i>
+                    <span>Instagram</span>
+            </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="version"><b>Feito com ♥️ Por Cofs</b></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="O que deseja seu pangaré?"
+                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Notificações 
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-bell text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">March 12, 2021</div>
+                    <span class="font-weight-bold">This rest api was made!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">March 29, 2021</div>
+                    This website has some problems!!!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">May 2, 2021</div>
+                    This website is back on as usual ✨
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <span class="badge badge-warning badge-counter">2</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Mensagem
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/logo/cofs2.jpg" style="max-width: 60px" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Slv meu mano ！！！.
+                     </div>
+                    <div class="small text-gray-500">Cofs · 2s</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/logo/cofs2.jpg" style="max-width: 60px" alt="">
+                    <div class="status-indicator bg-default"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Tudo suave? ...
+                    </div>
+                    <div class="small text-gray-500">Gabriel · 1s</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Mais Mensagens</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-tasks fa-fw"></i>
+                <span class="badge badge-success badge-counter">3</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Informações
+                </h6>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Quer add novos recursos
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Preguiçoso para add novos recursos
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">eu sou um iniciante
+                      <div class="small float-right"><b>100%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="https://www.instagram.com/gabrielcofs_">View All Information</a>
+              </div>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="img/cofsgato.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://wa.me/5511910592328">
+                  <i class="fab fa-fw fa-whatsapp"></i>
+                  Whatsapp
+                </a>
+                <a class="dropdown-item" href="https://t.me/gabrielcofs">
+                  <i class="fab fa-fw fa-telegram"></i>
+                  Telegram
+                </a>
+                <a class="dropdown-item" href="https://www.instagram.com/gabrielcofs_">
+                  <i class="fab fa-fw fa-instagram"></i>
+                  Instagram
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://apicofsv1.herokuapp.com/">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Início</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Casa</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Início</li>
+            </ol>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Nome do dono</div>
+                      <br>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">gabrielcofs</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2">Brabo</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-info"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+<!-- Hans Bot -->
+	
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Informações</div>
+  <div class="h5 mb-0 font-weight-bold text-gray-800">Tenho 17 Anos</div>
+  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 
+  <b id="time">18Hari  6Jam 59Menit 6Detik </b><br></span>
+  <div class="mt-2 mb-0 text-muted text-xs">
+  </div>
+  </div>
+  <div class="col-auto">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+<div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="row no-gutters align-items-center">
+<div class="col mr-2">
+<div class="text-xs font-weight-bold text-uppercase mb-1">Solicitações</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800">
+<div class="visitor" id="visitor">00</div>
+</div>
+<div class="mt-2 mb-0 text-muted text-xs">
+
+</span>
+<span>Total de Solicitações</span>
+</div>
+</div>
+<div class="col-auto">
+<i class="fas fa-eye fa-2x text-primary"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+         <!-- Batassss -->
+ <div class="col-xl-4 col-lg-5">
+              <div class="card mb-4">
+              	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              	<h6 class="m-0 font-weight-bold text-primary">Abaixo alguns grupos meus e algumas informações</h6>
+                  <div class="dropdown no-arrow">
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Select Periode</div>
+                      <a class="dropdown-item" href="#">Today</a>
+                      <a class="dropdown-item" href="#">Week</a>
+                      <a class="dropdown-item" href="#">This Year</a>
+                    </div>
+                  </div>
+                </div>
+		      <div class="card-body">
+
+		<img src="https://i.ibb.co/tXyBtk4/Sem-t-tulo11.jpg" alt="My Life" width="100%" >
+
+			<br><br><p><b>
+
+						API :<br>🤠 [ GRÁTIS ] ILIMITADA <br> <br>BOT WHATSAPP<br>1. MEU GRUPO WHATSAPP <a href="https://chat.whatsapp.com/BG6V8JzzHdSAKjQBauWeQu"><strong>AKI RAPAZIADA</strong></a><br>2. MEU GRUPO DE FUTEBOL <a href="https://chat.whatsapp.com/Ej1zopwHto52d9hpvyUtOg"><strong>AKI ESTÁ</strong></a><br><br>
+
+					<p>
+					</b>
+					</p>
+				</div>
+			</div>
+		</div>
+            <!-- Message From Customer-->
+
+<!-- Pie Chart -->
+            <div class="col-xl-8 col-lg-7 mb-4">
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Temas</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="#">Mídia Social</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Islamico</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Imagens</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Aleatório</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Criador</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Photooxy</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Anime</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Asupan</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">NSFW</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Jogos</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Random Cewe</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Film Apik</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">LK21</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Notícias</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Enc & Dec</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#">Outras</a></td>
+                        <td><span class="badge badge-success">Ativo</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+<!--Row-->
+
+
+          <!--Row-->
+
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p>Curtiu a API? Me siga aki: <a href="https://www.instagram.com/gabrielcofs_/"
+                  class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-instagram"></i>&nbsp;Instagram</a></p>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; 2021
+              <b><a href="https://github.com/gabrielcoofs" target="_blank">Gabrielcofs</a></b>. All rights reserved
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/ruang-admin.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>  
+  <iframe allow="autoplay" width="0" height="0" src="https://e.top4top.io/m_1993pside1.mp3" frameborder="0" allowfullscreen></iframe>
+
+</body>
+<script>
+	    function getvisitor(){
+              var xhr = new XMLHttpRequest();
+              var url = 'https://api.countapi.xyz/hit/api-Cofs.herokuapp.com/visits';
+              xhr.onloadend = function(){
+             data = JSON.parse(this.responseText);
+  document.getElementById("visitor").textContent = data.value
+              };
+              xhr.open("GET", url, true);
+              xhr.send();
+  }
+  </script>
+<script>
+				// Akhir Hitungan Mundur
+				var countDownDate = new Date("Jan 12, 2021 00:00:00").getTime();
+
+				// Update Hitungan Mundur Setiap 1 Detik
+				var x = setInterval(function() {
+
+					// Mengambil Tanggal Dan Waktu
+					var now = new Date().getTime();
+
+					// Find the distance between now and the count down date
+					var distance = countDownDate - now;
+
+					// Kalkulator Waktu Hari, Jam, Menit, Detik 
+					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+					// Menampilkan Hasil Di Dalam element Menggunakan id="time"
+					document.getElementById("time").innerHTML = days + "Hari  " + hours + "Jam " + minutes + "Menit " + seconds + "Detik ";
+
+					// Ketika countdown timer sudah berakhir Maka Tulisan Berakhir
+					if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("time").innerHTML = "Idade";
+					}
+				}, 1000);
+			</script>
+</html>
