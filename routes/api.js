@@ -591,7 +591,7 @@ router.get('/textmaker/maker5d', async (req, res, next) => {
         	if (!text2) return res.json(loghandler.nottext2)
             try {
             request.post({
-                url: "https://textpro.me/search?q=pornhub",
+                url: "https://textpro.me/pornhub-style-logo-online-generator-free-977.html",
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -626,13 +626,12 @@ router.get('/textmaker/maker5d', async (req, res, next) => {
                 res.json(loghandler.error)
                 }
         } else if (theme == 'harrypotter') {
-        	if (!text2) return res.json(loghandler.nottext2)
             request.post({
                 url: "https://textpro.me/create-harry-potter-text-effect-online-1025.html",
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: `text_1=${text}&text_2=${text2}&login=OK`,
+                body: `text_1=${text}&login=OK`,
                 }, (e,r,b) => {
                     if (!e) {
                         $ = cheerio.load(b)
