@@ -574,94 +574,6 @@ router.get('/textmaker', async (req, res, next) => {
         }
 })
 
-router.get('/textmaker/maker5d', async (req, res, next) => {
-        var theme = req.query.theme,
-             text = req.query.text,
-             text2 = req.query.text2,
-             text3 = req.query.text3,
-             apikeyInput = req.query.apikey;
-        
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'Cofs') return res.json(loghandler.invalidKey)
-        if (!theme) return res.json(loghandler.nottheme)
-        if (theme != 'pornhub' && theme != 'harrypotter') return res.json(loghandler.notheme)
-        if (!text) return res.json(loghandler.nottext)
-
-        if (theme == 'pornhub') {
-        	if (!text2) return res.json(loghandler.nottext2)
-            try {
-            request.post({
-                url: "https://textpro.me/pornhub-style-logo-online-generator-free-977.html",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `text_1=${text}&text_2=${text2}&login=OK`,
-                }, (e,r,b) => {
-                    if (!e) {
-                        $ = cheerio.load(b)
-                        $(".thumbnail").find("img").each(function() {
-                            h = $(this).attr("src")
-                            var result = "https://textpro.me/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
-                                .then(response => response.json())
-                                .then(data => {
-                                    var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
-                                        res.json({
-                                            status : true,
-                                            creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
-                                            result:{
-                                                url:urlnya,
-                                                delete_url: delete_url,
-                                                info: 'Obg por nos visitar'
-                                            }
-                                        })
-                                })
-                        })
-                    }
-                })
-                } catch (e) {
-                	console.log(e);
-                res.json(loghandler.error)
-                }
-        } else if (theme == 'harrypotter') {
-            request.post({
-                url: "https://textpro.me/create-harry-potter-text-effect-online-1025.html",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `text_1=${text}&login=OK`,
-                }, (e,r,b) => {
-                    if (!e) {
-                        $ = cheerio.load(b)
-                        $(".thumbnail").find("img").each(function() {
-                            h = $(this).attr("src")
-                            var result = "https://textpro.me/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
-                                .then(response => response.json())
-                                .then(data => {
-                                    var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
-                                        res.json({
-                                            status : true,
-                                            creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
-                                            result:{
-                                                url:urlnya,
-                                                delete_url: delete_url,
-                                                info: 'Obg por nos visitar'
-                                            }
-                                        })
-                                })
-                        })
-                    }
-                }) 
-        } else {
-            res.json(loghandler.error)
-        }
-})
-
 router.get('/textmaker/game', async (req, res, next) => {
         var theme = req.query.theme,
              text = req.query.text,
@@ -714,12 +626,13 @@ router.get('/textmaker/game', async (req, res, next) => {
                 res.json(loghandler.error)
                 }
         } else if (theme == 'naruto') {
+        	if (!text2) return res.json(loghandler.nottext2)
             request.post({
                 url: "https://photooxy.com/manga-and-anime/make-naruto-banner-online-free-378.html",
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: `text_1=${text}&login=OK`,
+                body: `text_1=${text}&text_2=${text2}&login=OK`,
                 }, (e,r,b) => {
                     if (!e) {
                         $ = cheerio.load(b)
