@@ -1399,13 +1399,13 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
 })
 
 
-router.get('/wallpaper/teknologi', async (req, res, next) => {
+router.get('/wallpaper/jogadores', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'Cofs') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Technology.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/gabrielcoofs/apiresults/blob/main/wallpaper/jogadores.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
