@@ -1405,7 +1405,7 @@ router.get('/wallpaper/jogadores', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'Cofs') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/gabrielcoofs/apiresults/blob/main/wallpaper/jogadores.json`))
+       fetch(encodeURI(`https://github.com/gabrielcoofs/apiresults/blob/main/wallpaper/jogadores.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
