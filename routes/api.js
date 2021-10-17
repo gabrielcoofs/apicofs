@@ -1379,7 +1379,7 @@ router.get('/muslim/niatashar', async (req, res, next) => {
 })
 
 
-router.get('/wallpaper/cyberspace', async (req, res, next) => {
+router.get('/wallpaper/times', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
@@ -1405,7 +1405,7 @@ router.get('/wallpaper/jogadores', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'Cofs') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/gabrielcoofs/apiresults/main/wallpaper/Jogadores.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/gabrielcoofs/apiresults/main/wallpaper/Jogadores.txt`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1419,7 +1419,7 @@ router.get('/wallpaper/jogadores', async (req, res, next) => {
 })
 
 
-router.get('/wallpaper/muslim', async (req, res, next) => {
+router.get('/wallpaper/selecoes', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
@@ -1439,7 +1439,7 @@ router.get('/wallpaper/muslim', async (req, res, next) => {
 })
 
 
-router.get('/wallpaper/programming', async (req, res, next) => {
+router.get('/wallpaper/outros', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
