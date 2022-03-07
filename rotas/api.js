@@ -1125,7 +1125,7 @@ router.get('/muslim/tahlil', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'Cofs') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataTahlil.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/gabrielcoofs/resultsql/main/dataTahlil.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
